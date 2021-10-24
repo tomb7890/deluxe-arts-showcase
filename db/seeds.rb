@@ -3,5 +3,14 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   movies = Artist.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+    unless Artist.find_by(description: attrs['plot'])
+      Artist.create(name:  attrs['title'], year: attrs['year'],
+                 description: attrs['plot'],
+                 launchurl: attrs['launchurl'],
+                 image: attrs['image'] )
+
+    end
