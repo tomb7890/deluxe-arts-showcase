@@ -55,7 +55,11 @@ allnodes.each do |n|
     if results.size > 0
 
       artist_name = page.search('.views-field.views-field-title').text
-      puts "Artist Name:  #{artist_name}"
+      hits = page.search('div.views-field-field-porchfest-image img')
+      if hits.size > 0 
+        artist_image =  hits[0]['src']
+        puts "Artist Image:  #{artist_image}"
+      end
     end
   end
 end
