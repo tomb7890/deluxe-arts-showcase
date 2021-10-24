@@ -41,7 +41,7 @@ while true
   grab_nodes_of_page(page, allnodes)
   count = count + 1 
 
-  if count  > 2
+  if count  > 1
     break
   end
 end
@@ -53,7 +53,9 @@ allnodes.each do |n|
   unless page.nil?
     results = page.search('div.views-field.views-field-field-band-description')
     if results.size > 0
-      puts "Found results: + #{results[0].text}"
+
+      artist_name = page.search('.views-field.views-field-title').text
+      puts "Artist Name:  #{artist_name}"
     end
   end
 end
