@@ -1,0 +1,13 @@
+* Artist
+
+has_and_belongs_to_many :genres
+- name: string
+- description :text
+- image :string
+
+  
+
+
+* Genres
+has_and_belongs_to_many :artists
+name: text
