@@ -7,6 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+require 'artistsgleaner'
+
+
+
+
     unless Artist.find_by(description: attrs['plot'])
       Artist.create(name:  attrs['title'], year: attrs['year'],
                  description: attrs['plot'],
