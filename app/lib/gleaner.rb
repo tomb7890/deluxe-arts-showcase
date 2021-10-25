@@ -3,8 +3,8 @@ class Gleaner
 
   attr_accessor :artists 
 
-  def initializer
-      @artists = getallartists
+  def initialize
+    @artists = getallcreators
   end
 
   def getallartists

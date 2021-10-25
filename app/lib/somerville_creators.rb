@@ -47,7 +47,7 @@ module SomervilleCreators
   end
 
 
-  def getallartists
+  def getallcreators
     baseurl='http://somervilleartscouncil.org'
     mainurl = baseurl + '/porchfest/2021'
     agent=Mechanize.new
