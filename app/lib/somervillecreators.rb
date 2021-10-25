@@ -46,39 +46,44 @@ while true
   end
 end
 
+artists = []
+
 allnodes.each do |n|
   fulladdress = baseurl + n
   puts "Now trying for node page " + fulladdress 
   page = agent.get(fulladdress)
   unless page.nil?
-    results = page.search('div.views-field.views-field-field-band-description')
+    artist = {} 
+    # look for band's title 
+    results = page.search('.views-field.views-field-title')
     if results.size > 0
+      artist['name'] = results[0].text
 
-      artist_name = page.search('.views-field.views-field-title').text
-      
+      results = page.search('div.views-field.views-field-field-band-description')
+      if results.size > 0
+        artist['description'] = results[0].text
+        puts "Bio: #{artist['description']}"
+      end
+            
       hits = page.search('div.views-field-field-porchfest-image img')
       if hits.size > 0 
-        artist_image =  hits[0]['src']
-        # puts "Artist Image:  #{artist_image}"
+        artist['image'] =  hits[0]['src']
+        puts "Artist Image:  #{artist['image']}"
       end
 
       results = page.search('div.views-field.views-field-field-band-website > div > a')
       if results.size > 0
-        artist_website = results[0] 
+        artist_website = results[0]
         puts "Website: #{artist_website.text}"
         puts "The href:: #{        artist_website['href'] }"
-
-
-
+        artist['website'] = artist_website['href'] 
       end
-
 
       artist_genres = page.search('div.views-field.views-field-taxonomy-vocabulary-5 > div').text
       # puts "Artist Genres:  #{artist_genres}"
-      
     end
 
-    
+    artists << artist 
   end
 end
 
