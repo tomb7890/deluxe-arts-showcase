@@ -4,7 +4,8 @@ class Gleaner
   attr_accessor :artists 
 
   def initializer
-      @artists = getallartists
+
   end
+
 
 end 

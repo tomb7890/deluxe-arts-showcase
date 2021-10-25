@@ -10,6 +10,7 @@
 require 'gleaner'
 
 g = Gleaner.new
+g.init
 
 allartists = g.getallartists
 allartists.each do |a|
