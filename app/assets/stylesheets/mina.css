@@ -1,0 +1,141 @@
+/*****************************************************************************
+  hoverboards
+******************************************************************************/
+* {
+  box-sizing: border-box; }
+
+/*****************************************************************************
+  Variables
+******************************************************************************/
+/*****************************************************************************
+  Base Styles
+******************************************************************************/
+/* Add your styles here */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+
+  color: #111; }
+
+img {
+  max-width: 100%; }
+
+main, footer {
+  display: block;
+  width: 100%;
+  overflow: auto; }
+
+footer {
+  background-color: #000; }
+
+a {
+  color: #990000;
+  text-decoration: none; }
+
+a:hover {
+  text-decoration: underline; }
+
+/*****************************************************************************
+  Layout Styles
+******************************************************************************/
+.list-unstyled {
+  margin: 0;
+  padding: 0; }
+  .list-unstyled > li {
+    list-style-type: none; }
+
+.content {
+  overflow: auto;
+  margin: 0 1em; }
+
+.constrained {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*****************************************************************************
+  Module Styles
+******************************************************************************/
+.site-branding {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  text-align: center; }
+  .site-branding .site-logo {
+    display: inline-block;
+    vertical-align: middle; }
+  .site-branding .site-title {
+    display: none;
+    margin: 0;
+    font-size: 1.5em;
+    color: #fff; }
+
+.site-menu {
+  background-color: #ccc; }
+
+.menu > li {
+  background-color: #ccc;
+  border-bottom: 1px dotted #f0f0f0; }
+  .menu > li:hover {
+    background-color: #f0f0f0; }
+  .menu > li > a {
+    display: block;
+    padding: 0.5em 1em; }
+
+.intro {
+  font-family: Georgia, Baskerville, "Times New Roman", serif;
+  font-weight: 200;
+  padding: 1em; }
+
+.product {
+  margin: 0 0 1em;
+  border: 1px solid #f0f0f0; }
+  .product > .product-meta {
+    padding: 0 1em 1em; }
+
+.footer-nameplate {
+  padding: 1em;
+  text-align: right;
+  background-color: #000;
+  color: #fff; }
+
+/* Add your media queries here */
+@media screen and (min-width: 640px) {
+  .site-branding .site-logo, .site-branding .site-title {
+    vertical-align: middle; }
+  .site-branding .site-title {
+    display: inline-block;
+    padding-left: 0.5em; }
+  .site-branding .site-logo {
+    margin-left: -2em; }
+  .site-menu {
+    text-align: center; }
+    .site-menu > .menu > li {
+      display: inline-block; }
+  .product-listing {
+    overflow: hidden; }
+  .product {
+    float: left;
+    width: 50%;
+    border: 0; }
+    .product > .product-image {
+      padding: 0 1em; }
+  .footer-menu, .footer-nameplate {
+    float: left;
+    width: 50%; } }
+
+@media screen and (min-width: 960px) {
+  body {
+    font-size: 1.1em;
+    line-height: 1.35; }
+  .intro {
+    font-size: 3.2em;
+    line-height: 1em;
+    padding: 0.5em 1em; }
+  .product {
+    float: left;
+    width: 33.33333%; } }
