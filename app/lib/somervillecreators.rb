@@ -62,9 +62,19 @@ allnodes.each do |n|
         # puts "Artist Image:  #{artist_image}"
       end
 
+      results = page.search('div.views-field.views-field-field-band-website > div > a')
+      if results.size > 0
+        artist_website = results[0] 
+        puts "Website: #{artist_website.text}"
+        puts "The href:: #{        artist_website['href'] }"
+
+
+
+      end
+
 
       artist_genres = page.search('div.views-field.views-field-taxonomy-vocabulary-5 > div').text
-      puts "Artist Genres:  #{artist_genres}"
+      # puts "Artist Genres:  #{artist_genres}"
       
     end
 
