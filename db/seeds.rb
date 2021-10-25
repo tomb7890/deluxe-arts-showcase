@@ -11,13 +11,17 @@ require 'gleaner'
 
 g = Gleaner.new
 
-allartists = g.getartists 
+allartists = g.getallartists
+allartists.each do |a|
 
+  unless Artist.find_by(name: a['name'])
+    Artist.create(name:  a['name'],
+                  description: a['description'],
+                  image: a['image'],
+                  website: a['website']
+                 )
+  end
 
-unless Artist.find_by(name: g['name'])
-  Artist.create(name:  g['name'],
-                description: g['description'],
-                image: g['image'],
-                website: g['website']
-               )
 end
+
+
