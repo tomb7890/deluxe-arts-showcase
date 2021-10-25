@@ -9,13 +9,17 @@
 
 require 'artistsgleaner'
 
+g = Gleaner.new
+
+allartists = g.getartists 
 
 
 
-    unless Artist.find_by(description: attrs['plot'])
-      Artist.create(name:  attrs['title'], year: attrs['year'],
-                 description: attrs['plot'],
-                 launchurl: attrs['launchurl'],
-                 image: attrs['image'] )
 
-    end
+unless Artist.find_by(name: g.name)
+  Artist.create(name:  g.name, 
+                description: g.description, 
+                image: g.image
+                website: g.website
+               )
+end
