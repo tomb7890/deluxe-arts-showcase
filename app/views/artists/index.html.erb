@@ -1,3 +1,17 @@
 
 <h1>Hello World!</h1>
 
+<% @artists.each do |a|  %>
+<div class="artist_block">
+
+  <%= a.name %>
+
+  <img src= <%= a.image %>  alt="">
+
+
+
+
+</div>
+
+<% end %>
+
