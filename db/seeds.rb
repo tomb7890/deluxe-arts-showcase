@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-require 'artistsgleaner'
+require 'gleaner'
 
 g = Gleaner.new
 

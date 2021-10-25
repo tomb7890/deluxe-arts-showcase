@@ -6,6 +6,5 @@ class Gleaner
   def initializer
       @artists = getallartists
   end
-  
 
 end 
