@@ -45,7 +45,7 @@ def getallnodes(agent, page, baseurl)
 end
 
 
-def main
+def getallartists
   baseurl='http://somervilleartscouncil.org'
   mainurl = baseurl + '/porchfest/2021'
   agent=Mechanize.new
@@ -91,9 +91,12 @@ def main
       artists << artist 
     end
   end
+  artists 
 end
 
-main
+
+
+getallartists
 
 
 
