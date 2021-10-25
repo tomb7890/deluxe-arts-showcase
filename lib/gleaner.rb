@@ -1,5 +1,5 @@
 class Gleaner
-  include "somervillecreators"
+  include  SomervilleCreators
 
   attr_accessor :artists 
 
