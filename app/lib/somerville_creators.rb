@@ -23,7 +23,7 @@ module SomervilleCreators
     allnodes = [] 
     
     grab_nodes_of_page(page, allnodes)
-    count = 0 
+    pagecount = 0 
 
     while true
       el = fetch_next_page(page)
@@ -36,9 +36,9 @@ module SomervilleCreators
       puts el.href
       
       grab_nodes_of_page(page, allnodes)
-      count = count + 1 
+      pagecount = pagecount + 1 
 
-      if count  > 1
+      if pagecount  > 1
         break
       end
     end
