@@ -6,13 +6,8 @@ class Gleaner
   def initialize
   end
 
-  def getallartists
-    @artists
-  end
-
-
   def init
-    @artists = getallartists
+    @artists = getallcreators
   end
 
   def set_default_image

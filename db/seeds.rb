@@ -9,18 +9,37 @@
 
 require 'gleaner'
 
-g = Gleaner.new
-g.init
+gleaner = Gleaner.new
+gleaner.init
 
-allartists = g.getallartists
-allartists.each do |a|
+allartists = gleaner.artists
+allartists.each do |gleanedartist|
 
-  unless Artist.find_by(name: a['name'])
-    Artist.create(name:  a['name'],
-                  description: a['description'],
-                  image: a['image'],
-                  website: a['website']
-                 )
+  # unless Artist.find_by(name: a['name'])
+  if true then
+    artist = Artist.new(name:  gleanedartist['name'],
+                  description: gleanedartist['description'],
+                  image: gleanedartist['image'],
+                  website: gleanedartist['website']
+              )
+
+
+    gleanedartist['genres'].split(",").each do | genrestringuntrimmed |
+      genrestring = genrestringuntrimmed.strip
+
+      unless genrestring.blank? 
+        # ensure genre is in the db 
+        dbgenre = Genre.find_or_create_by(name: genrestring) 
+
+        # apply it to current restaurant if need be 
+        if artist.genres.find_by(name: genrestring).nil?
+          artist.genres << dbgenre
+        end
+      end
+    end
+    artist.save
+
+    
   end
 
 end

@@ -86,8 +86,9 @@ module SomervilleCreators
             artist['website'] = artist_website['href'] 
           end
 
-          # artist_genres = page.search('div.views-field.views-field-taxonomy-vocabulary-5 > div').text
-          # puts "Artist Genres:  #{artist_genres}"
+          artist_genres = page.search('div.views-field.views-field-taxonomy-vocabulary-5 > div').text
+          puts "Artist Genres:  #{artist_genres}"
+          artist['genres'] = artist_genres
         end
 
         artists << artist 
