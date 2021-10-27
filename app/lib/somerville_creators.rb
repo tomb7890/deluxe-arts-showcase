@@ -38,7 +38,7 @@ module SomervilleCreators
       grab_nodes_of_page(page, allnodes)
       pagecount = pagecount + 1 
 
-      if pagecount  > 1
+      if pagecount  > 11
         break
       end
     end
