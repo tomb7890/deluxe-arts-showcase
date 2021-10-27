@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resources :artists
   resources :genres
-  root "artists#index"
+  root "artists#about"
 end
