@@ -7,6 +7,21 @@
         <p class="product-description">
 	  <%= @artist.description %>		
         </p>
-        <a class="product-link" href= <%= artist_path(@artist) %> > >See Details</a>
+
+
+
+	<% @artist.genres.each do |g| %>
+
+	<a href= <%= genre_path(g)  %>
+	     >   <%= g.name %>
+	</a>
+
+
+
+	<% end %>
+	
+
+
+
       </div>
 
