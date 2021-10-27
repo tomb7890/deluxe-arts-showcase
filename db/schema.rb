@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_153227) do
+ActiveRecord::Schema.define(version: 2021_10_27_104227) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2021_10_26_153227) do
     t.string "website"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "artists_genres", id: false, force: :cascade do |t|
+    t.integer "artist_id", null: false
+    t.integer "genre_id", null: false
+    t.index ["artist_id", "genre_id"], name: "index_artists_genres_on_artist_id_and_genre_id"
+    t.index ["genre_id", "artist_id"], name: "index_artists_genres_on_genre_id_and_artist_id"
   end
 
   create_table "genres", force: :cascade do |t|
