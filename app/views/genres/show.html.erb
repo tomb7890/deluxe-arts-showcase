@@ -1,5 +1,22 @@
 Hello world
-This is the <a href=  <%=  %>
-	       >     <%= @genre.name %>
-   </a> genre.
+This is the 
+	          <%= @genre.name %>
+		  genre.
 
+
+<% @genre.artists.each do |a|  %>
+
+<h3>
+
+<a href= <%= artist_path(a) %> ><%= a.name  %> </a>
+
+
+
+
+
+
+
+</h3>
+
+
+<% end %>
