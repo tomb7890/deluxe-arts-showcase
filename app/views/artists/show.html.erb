@@ -1,27 +1,14 @@
 
-
-
-      <img src=<%= @artist.image %> alt="" class="product-image">
-      <div class="product-meta">
-        <h2 class="product-title"><%= @artist.name %> </h2>
-        <p class="product-description">
-	  <%= @artist.description %>		
-        </p>
-
-
-
-	<% @artist.genres.each do |g| %>
-
-	<a href= <%= genre_path(g)  %>
-	     >   <%= g.name %>
-	</a>
-
-
-
-	<% end %>
-	
-
-
-
-      </div>
+<img src=<%= @artist.image %> alt="" class="product-image">
+<div class="product-meta">
+  <h2 class="product-title"><%= @artist.name %> </h2>
+  <p class="product-description">
+    <%= @artist.description %>		
+  </p>
+  <% @artist.genres.each do |g| %>
+  <a href= <%= genre_path(g)  %>
+     >   <%= g.name %>
+  </a>
+  <% end %>
+</div>
 
