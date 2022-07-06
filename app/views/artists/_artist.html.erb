@@ -1,0 +1,13 @@
+<li class="artist">
+  <img src=<%= artist.image %> alt="" class="artist-image">
+  <div class="product-meta">
+    <p class="product-description">
+      <h2 class="product-title"><%= artist.name %> </h2>
+    <p class="product-description">
+      <%= artist.description %>		
+    </p>
+    <a class="product-link" href= <%= artist_path(artist) %> >See Details</a>
+  </div>
+</li>
+
+

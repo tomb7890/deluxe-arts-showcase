@@ -7,18 +7,11 @@
   </h2>
   <ul class="product-listing list-unstyled">
 
-    <% @artists.each do |a|  %>
-    <li class="product">
-      <img src=<%= a.image %> alt="" class="product-image">
-      <div class="product-meta">
-        <h2 class="product-title"><%= a.name %> </h2>
-        <p class="product-description">
-	  <%= a.description %>		
-        </p>
-        <a class="product-link" href= <%= artist_path(a) %> > >See Details</a>
-      </div>
-    </li>
-    <% end %>
+
+    <%=     render partial: "artist", collection: @artists %>
+
+    
+
 
   </ul>
 
